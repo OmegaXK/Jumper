@@ -18,14 +18,14 @@ BLACK = (0, 0, 0)
 MAGENTA = (255, 0, 255)
 
 #Load Assets
-bgimg = pygame.image.load('resources/arcade background.png')
+bgimg = pygame.image.load('Resources/arcade background.png')
 bgimg = pygame.transform.scale(bgimg, (WINDOWWIDTH, WINDOWHEIGHT))
 
-playerimg = pygame.image.load('resources/player.png')
+playerimg = pygame.image.load('Resources/player.png')
 playerrect = playerimg.get_rect()
 playerrect.center = (center)
 
-baddieimg = pygame.image.load('resources/baddie.png')
+baddieimg = pygame.image.load('Resources/baddie.png')
 
 font = 'freesansbold.ttf'
 

@@ -123,8 +123,6 @@ def rungame():
 
 
 def waitforstart():
-	global WINDOWWIDTH, WINDOWHEIGHT, DISPLAYSURF
-
 	#Draws the instructions on the screen and waits for a player to press a key
 	DISPLAYSURF.blit(bgimg, (0, 0))
 	drawtext('INSTRUCTIONS', font, 40, DISPLAYSURF, center[0], center[1] - 160, MAGENTA)

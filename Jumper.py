@@ -1,4 +1,7 @@
 #Jumper
+#Jump over baddies as they come at you
+#By Collin Maryniak (omegaxk314@gmail.com)
+
 import pygame, sys, random
 from pygame.locals import *
 
@@ -18,19 +21,18 @@ BLACK = (0, 0, 0)
 MAGENTA = (255, 0, 255)
 
 #Load Assets
-bgimg = pygame.image.load('Resources/arcade background.png')
+bgimg = pygame.image.load('Resources/arcade background.png').convert_alpha()
 bgimg = pygame.transform.scale(bgimg, (WINDOWWIDTH, WINDOWHEIGHT))
 
-playerimg = pygame.image.load('Resources/player.png')
+playerimg = pygame.image.load('Resources/player.png').convert_alpha()
 playerrect = playerimg.get_rect()
 playerrect.center = (center)
 
-baddieimg = pygame.image.load('Resources/baddie.png')
+baddieimg = pygame.image.load('Resources/baddie.png').convert_alpha()
 
 font = 'freesansbold.ttf'
 
 bgmusic = pygame.mixer.music.load('Resources/Boss battle theme EXE (1).wav')
-
 
 #Game constants
 baddieminsize = 20
@@ -40,12 +42,12 @@ baddiemaxspeed = 8
 baddiespawnrate = 140
 baddies = []
 bframe = 0
-
-game_over = False
 gravity = 1.4
 fps = 60
 pmh = center[0] + 100
 jumpheight = -18
+
+game_over = False
 
 def main():
 	pygame.mixer.music.play(-1, 0.0)
@@ -118,6 +120,7 @@ def rungame():
 
 			pygame.display.update()
 			mainclock.tick(fps)
+
 		else:
 			return
 
